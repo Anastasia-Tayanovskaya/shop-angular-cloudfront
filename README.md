@@ -6,6 +6,12 @@ Repo maintainers:
 
 - [Sergey Gultyayev](https://github.com/gultyayev)
 
+## Task 2.2
+
+- https://d3qtaoc3x78qta.cloudfront.net/ - S3 bucket, CloudFront Distribution, CloudFront Invalidation are set manually
+  (http://agorbikova-test-proj-bucket.s3-website.eu-north-1.amazonaws.com/ - S3-website link with 403 Forbidden status code);
+- https://d2nxjfdpbz718f.cloudfront.net/ - app is built and deployed automatically with serverless-finch and serverless-single-page-app plugins.
+
 ## The purpose
 
 The repository was created to have an Angular version of e-shop for EPAM NodeJS AWS course. At the same time we strive to make this repository follows best practices so it may be used as a starter for new projects with all the necessary toolings already set up.
