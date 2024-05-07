@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { ApiService } from '../../core/api.service';
-import { switchMap } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
+import { switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class ManageProductsService extends ApiService {
@@ -15,6 +15,7 @@ export class ManageProductsService extends ApiService {
     }
 
     return this.getPreSignedUrl(file.name).pipe(
+      tap((url) => console.log(url)),
       switchMap((url) =>
         this.http.put(url, file, {
           headers: {
@@ -44,6 +45,7 @@ export class ManageProductsService extends ApiService {
       params: {
         name: fileName,
       },
+      responseType: 'text',
     });
   }
 }
